@@ -1,0 +1,2 @@
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://duydpd.project.prx301/Schema/Categories", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package com.example.springboot_demo.jaxb.product.category;

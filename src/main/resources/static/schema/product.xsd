@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://giangth.project.prx301/Schema/Products"
+    targetNamespace="http://giangth.project.prx301/Schema/Products" elementFormDefault="qualified">
+
+    <xsd:element name="product" type="Product" />
+    <xsd:simpleType name="product_code">
+        <xsd:restriction base="xsd:string">
+            <!--<xsd:pattern value="KT[0-9]{4}([A-Z]+)?( [0-9A-Z]+(/[0-9A-Z]+)?)?" />-->
+            <xsd:pattern value="KT[0-9]{1,9}|VL[0-9]{1,9}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Product">
+        <xsd:sequence>
+            <xsd:element name="id" type="xsd:positiveInteger" />
+            <xsd:element name="code" type="product_code" />
+            <xsd:element name="model" type="xsd:string" />
+            <xsd:element name="name" type="xsd:string" />
+            <xsd:element name="author" type="xsd:string" />
+            <xsd:element name="price" type="xsd:double" />
+            <xsd:element name="avatarLink" type="xsd:string" />
+            <xsd:element name="productLink" type="xsd:string" />
+            <xsd:element name="categoryKey" type="xsd:string" />
+            <xsd:element name="category" type="xsd:string" />
+            <xsd:element name="siteKey" type="xsd:string" />
+            <xsd:element name="imageLinks" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--<xsd:complexType name="Images">-->
+    <!--<xsd:sequence>-->
+    <!--<xsd:element name="imageLink" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>-->
+    <!--</xsd:sequence>-->
+    <!--</xsd:complexType>-->
+
+</xsd:schema>
